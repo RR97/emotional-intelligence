@@ -1,18 +1,21 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.rr97.emotionalintelligence</id>
-    <name>emotional-intelligence Template</name>
-    <vendor>rr97</vendor>
+    <name>E.I.: Emotional Intelligence</name>
+    <vendor>EI Team</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.rr97.emotionalintelligence.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <editorFactoryDocumentListener implementation="com.github.rr97.emotionalintelligence.listeners.FileHistoryListener" />
+        <postStartupActivity implementation="com.github.rr97.emotionalintelligence.MyStartUpActivity"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.rr97.emotionalintelligence.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <project-components>
+        <component>
+            <implementation-class>com.github.rr97.emotionalintelligence.MyStartUpActivity</implementation-class>
+        </component>
+    </project-components>
 </idea-plugin>
