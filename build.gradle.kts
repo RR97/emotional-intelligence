@@ -24,7 +24,7 @@ repositories {
 
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
-    implementation("com.aallam.openai:openai-client:3.6.0-SNAPSHOT")
+    implementation("com.aallam.openai:openai-client:3.6.3")
     implementation("io.ktor:ktor-client-cio:2.3.6")
     testImplementation(kotlin("script-runtime"))
 }
